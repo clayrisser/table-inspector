@@ -1,6 +1,7 @@
 import React, { FC, ReactElement, ReactNode, useContext } from 'react';
 import AlternateContext from './contexts/Alternate';
 import FirstContext from './contexts/First';
+import HeadContext from './contexts/Head';
 import { useStyles } from './hooks';
 
 export interface RowProps
@@ -13,6 +14,7 @@ export interface RowProps
 
 const Row: FC<RowProps> = (props: RowProps) => {
   const isAlternate = useContext(AlternateContext);
+  const isHead = useContext(HeadContext);
   const styles = useStyles('TableInspectorDataContainer');
   const clonedProps = { ...props };
   delete clonedProps.children;
@@ -26,7 +28,7 @@ const Row: FC<RowProps> = (props: RowProps) => {
     <tr
       {...props}
       style={{
-        ...styles.tr,
+        ...(isHead ? styles.tr : {}),
         ...(isAlternate ? styles.trAlternate : {}),
         ...props.style
       }}
