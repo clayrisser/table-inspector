@@ -2,6 +2,8 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/codejamninja/table-inspector.svg?style=social&label=Stars)](https://github.com/codejamninja/table-inspector)
 
+![](assets/table-inspector.png)
+
 > browser devtools table for react
 
 Please ★ this repo if you found it useful ★ ★ ★
